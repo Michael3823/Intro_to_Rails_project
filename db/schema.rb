@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_040557) do
+ActiveRecord::Schema.define(version: 2021_10_28_041637) do
 
   create_table "champions", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(version: 2021_10_28_040557) do
     t.index ["partype_id"], name: "index_champions_on_partype_id"
   end
 
+  create_table "character_classes", force: :cascade do |t|
+    t.string "name"
+    t.integer "character_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_character_classes_on_character_id"
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "partypes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -30,4 +47,5 @@ ActiveRecord::Schema.define(version: 2021_10_28_040557) do
   end
 
   add_foreign_key "champions", "partypes"
+  add_foreign_key "character_classes", "characters"
 end
