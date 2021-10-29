@@ -8,9 +8,51 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../">
+          <%= image_tag('leaguelogo.png', draggable: "false", id: "drag1") %>
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class=" navbar-item">
+          
+             <div class="control has-icons-left">
+             <%= form_with(url: search_champions_path, method: :get, local: true ) do %>
+              <%= text_field_tag(:keywords, nil, class: "input is-rounded", placeholder: 'Search for Champions') %>
+              <span class="icon is-left">
+                <i class="fa fa-search"></i>
+              </span>
+            </div>
+            <div class="control">
+                <%= submit_tag("Search", class: "button is primary") %>
+            </div>
+          </div>
+          <% end %>
+          <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="../">
+            Home
+          
+          
+            <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="../champions">
+             Champions
+            </a>
+          <a class="navbar-item is-size-5 has-text-weight-semibold">
+            Classes
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <%= yield %>
 </html>
