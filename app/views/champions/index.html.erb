@@ -4,18 +4,11 @@
             <div class="container has-text-centered">
                 <div class="columns is-vcentered">
                     <div class="column is-5">
-                        <figure class="image is-4by3">
-                            <%= image_tag('Fizz.png', draggable: "false", id: "drag7", alt: "Edit Entry") %>
-                        </figure>
-                        <figure >
-                            <%= image_tag('Ahri.png', draggable: "false", id: "drag2", alt: "Edit Entry") %>
-                        </figure>
+                        
                         <figure >
                             <%= image_tag('Akali.png', draggable: "false", id: "drag3", alt: "Edit Entry") %>
                         </figure>
-                        <figure class="image is-4by3">
-                            <%= image_tag('Nocturne.png', draggable: "true", id: "drag4", alt: "Edit Entry") %>
-                        </figure>
+                        
                     </div>
                     <div class="column is-6 is-offset-1">
                         <h2> All Champions</h2>
@@ -25,6 +18,7 @@
                             <li><%= link_to champs.name, champs%></li>
                             <%end%>
                         </ul>
+                        <%= will_paginate @champions %>
 
                         
                     </div>

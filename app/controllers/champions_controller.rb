@@ -1,6 +1,6 @@
 class ChampionsController < ApplicationController
   def index
-    @champions = Champion.includes(:partype).all.order("name ASC")
+    @champions = Champion.all.paginate(page: params[:page], per_page: 10)
   end
 
   def show
