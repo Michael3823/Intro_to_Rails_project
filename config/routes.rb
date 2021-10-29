@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :champions, only: %i[index show]
   resources :partypes, only: %i[index show]
+
   resources :champions, only: %i[index show] do
     collection do 
       get "search"
