@@ -27,20 +27,23 @@
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
           <div class=" navbar-item">
-            <div class="control has-icons-left">
-              <input class="input is-rounded" type="email" placeholder="Search for a champion">
+             <div class="control has-icons-left">
+              <%= text_field_tag(:keywords, nil, class: "input is-rounded", placeholder: 'search for Champions') %>
               <span class="icon is-left">
                 <i class="fa fa-search"></i>
               </span>
             </div>
+            <div class="control">
+                <%= submit_tag("Search", class: "button is primary") %>
+            </div>
           </div>
-          <a class="navbar-item is-active is-size-5 has-text-weight-semibold">
+          <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="../">
             Home
-          </a>
           
-            
-             <%= link_to("Champions", controller:"champions", :class => "navbar-item is-size-5 has-text-weight-semibold") %>
           
+            <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="../champions">
+             Champions
+            </a>
           <a class="navbar-item is-size-5 has-text-weight-semibold">
             Classes
           </a>
