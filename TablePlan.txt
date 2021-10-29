@@ -1,0 +1,11 @@
+Partype Table (1 to many)
+- id, Name
+
+Champion Table
+- id, name, title, description, image, partype_id
+
+Classes_table Table (joiner table)
+- champion_id, Champion_classes_id
+
+Champion_classes Table (many to many with champion)
+- id, Name
