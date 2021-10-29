@@ -21,8 +21,6 @@ champions.each do |c|
 
     partype = Partype.find_or_create_by(name: c["partype"])
 
-    
-
     if partype && partype.valid?
       champ =  partype.champions.create(
             name:           c["name"],
@@ -35,9 +33,6 @@ champions.each do |c|
     else
         puts "invalid partype #{c['partype']} for #{c['name']}"
     end
-
-    
-    
 end
 
 
