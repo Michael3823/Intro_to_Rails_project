@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
 
-  <body>
+  
     <nav class="navbar">
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" href="../">
-          <%= image_tag('leaguelogo.png', draggable: "false", id: "drag1") %>
+          <%= image_tag('leaguelogo.png', draggable: "false", id: "drag1", alt: "Logo") %>
         </a>
         <span class="navbar-burger burger" data-target="navbarMenu">
           <span></span>
@@ -28,25 +28,25 @@
         <div class="navbar-end">
           <div class=" navbar-item">
           
-             <div class="control has-icons-left">
+            <div class="control has-icons-left">
              <%= form_with(url: search_champions_path, method: :get, local: true ) do %>
-              <%= text_field_tag(:keywords, nil, class: "input is-rounded", placeholder: 'Search for Champions') %>
+             <%= text_field_tag(:keywords, nil, class: "input is-rounded", placeholder: 'Search for Champions') %> 
+             <%= submit_tag("Search", class: "button is primary") %><% end %>
+             
+              
               <span class="icon is-left">
                 <i class="fa fa-search"></i>
               </span>
             </div>
-            <div class="control">
-                <%= submit_tag("Search", class: "button is primary") %>
+            
+                
+                
+            
             </div>
-          </div>
-          <% end %>
-          <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="../">
-            Home
+            <%= link_to 'home', root_path, class: "navbar-item is-active is-size-5 has-text-weight-semibold" %>
           
           
-            <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="../champions">
-             Champions
-            </a>
+            <%= link_to 'Champions', champions_path, class: "navbar-item is-active is-size-5 has-text-weight-semibold" %>
           <a class="navbar-item is-size-5 has-text-weight-semibold">
             Classes
           </a>
@@ -55,4 +55,5 @@
     </div>
   </nav>
   <%= yield %>
+
 </html>
