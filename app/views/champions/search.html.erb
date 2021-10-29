@@ -1,9 +1,39 @@
-<p class="mb-5">
-    Found <%= pluralize(@champions.count, 'Champion') %> When searching for: <%= params[:keywords] %>
-</p>
+<section class="hero is-fullheight is-default is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column is-5">
+                        
+                        <figure >
+                            <%= image_tag('Poro.png', draggable: "false", id: "drag3", alt: "Edit Entry") %>
+                        </figure>
+                        
+                    </div>
+                    <div class="column is-6 is-offset-1">
+                        <h2> Found <%= pluralize(@champions.count, 'Champion') %> When searching for: <%= params[:keywords] %></h2>
 
-<ul>
-    <% @champions.each do |champ| %>
-        <li><%= link_to champ.name, champ%> </li>
-    <% end %>
-</ul>
+                        <ul class="block-list is-small is-outlined is-success is-centered">
+                            <% @champions.each do |champ| %>
+                                <li><%= link_to champ.name, champ%> </li>
+                            <% end %>
+                        </ul>
+                        <%= will_paginate @champions %>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>End of Page</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+

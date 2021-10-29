@@ -9,6 +9,6 @@ class ChampionsController < ApplicationController
 
   def search
     wildcard_search = "%#{params[:keywords]}%"
-    @champions = Champion.where("name LIKE ?", wildcard_search)
+    @champions = Champion.where("name LIKE ?", wildcard_search).paginate(page: params[:page], per_page: 10)
   end
 end
