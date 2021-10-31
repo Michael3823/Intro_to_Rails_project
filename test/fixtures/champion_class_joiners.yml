@@ -2,8 +2,8 @@
 
 one:
   champion: one
-  championclass: one
+  champion_class: one
 
 two:
   champion: two
-  championclass: two
+  champion_class: two

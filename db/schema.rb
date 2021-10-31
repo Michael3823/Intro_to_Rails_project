@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_194731) do
+ActiveRecord::Schema.define(version: 2021_10_31_062809) do
 
   create_table "champion_class_joiners", force: :cascade do |t|
     t.integer "champion_id", null: false
-    t.integer "championclass_id", null: false
+    t.integer "champion_class_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["champion_class_id"], name: "index_champion_class_joiners_on_champion_class_id"
     t.index ["champion_id"], name: "index_champion_class_joiners_on_champion_id"
-    t.index ["championclass_id"], name: "index_champion_class_joiners_on_championclass_id"
   end
 
   create_table "champion_classes", force: :cascade do |t|
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_194731) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "champion_class_joiners", "championclasses"
+  add_foreign_key "champion_class_joiners", "champion_classes"
   add_foreign_key "champion_class_joiners", "champions"
   add_foreign_key "champions", "partypes"
   add_foreign_key "character_classes", "characters"
