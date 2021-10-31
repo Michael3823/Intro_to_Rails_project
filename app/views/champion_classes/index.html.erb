@@ -1,2 +1,120 @@
-<h1>ChampionClasses#index</h1>
-<p>Find me in app/views/champion_classes/index.html.erb</p>
+
+<section class="container">
+<div class="level-item">
+<div class="columns is-multiline is-centered cards-container" id="sectioncontainer">
+    <div class="column is-narrow">
+        <article class="message is-black">
+            <div class="message-header">
+                <p>Marksman</p>
+                
+            </div>
+            <div class="message-body">
+                <ul class="block-list is-small is-outlined is-success is-centered">
+                            <% @champions.each do |champs|%>
+                            <% if champs.class_list.include? "Marksman"%>
+                            <li class="block-list is-small is-outlined is-success is-centered">
+                            <%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%>
+                            </li>
+                            <% end %>
+                            <%end%>
+            </ul>
+            </div>
+        </article>
+    </div>
+    <div class="column is-narrow">
+        <article class="message is-primary">
+            <div class="message-header">
+                <p>Support</p>
+            </div>
+            <div class="message-body">
+            <ul class="block-list is-small is-outlined is-success is-centered">
+                            <% @champions.each do |champs|%>
+                            <% if champs.class_list.include? "Support"%>
+                            <li class="block-list is-small is-outlined is-success is-centered">
+                            <%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%>
+                            </li>
+                            <% end %>
+                            <%end%>
+            </ul>
+                
+            </div>
+        </article>
+    </div>
+    <div class="column is-narrow">
+        <article class="message is-link">
+            <div class="message-header">
+                <p>Assassin</p>
+            </div>
+            <div class="message-body">
+                <ul class="block-list is-small is-outlined is-success is-centered">
+                            <% @champions.each do |champs|%>
+                            <% if champs.class_list.include? "Assassin"%>
+                            <li class="block-list is-small is-outlined is-success is-centered">
+                            <%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%>
+                            </li>
+                            <% end %>
+                            <%end%>
+                </ul>
+            </div>
+        </article>
+    </div>
+    <div class="column is-narrow">
+        <article class="message is-info">
+            <div class="message-header">
+                <p>Mage</p>
+            </div>
+            <div class="message-body">
+                <ul class="block-list is-small is-outlined is-success is-centered">
+                            <% @champions.each do |champs|%>
+                            <% if champs.class_list.include? "Mage"%>
+                            <li class="block-list is-small is-outlined is-success is-centered">
+                            <%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%>
+                            </li>
+                            <% end %>
+                            <%end%>
+                </ul>
+            </div>
+        </article>
+    </div>
+    <div class="column is-narrow">
+        <article class="message is-success">
+            <div class="message-header">
+                <p>Tank</p>
+            </div>
+            <div class="message-body">
+                <ul class="block-list is-small is-outlined is-success is-centered">
+                            <% @champions.each do |champs|%>
+                            <% if champs.class_list.include? "Tank"%>
+                            <li class="block-list is-small is-outlined is-success is-centered">
+                            <%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%>
+                            </li>
+                            <% end %>
+                            <%end%>
+                </ul>
+            </div>
+        </article>
+    </div>
+    <div class="column is-narrow">
+        <article class="message is-warning">
+            <div class="message-header">
+                <p>Fighters</p>
+            </div>
+            <div class="message-body">
+                <ul class="block-list is-small is-outlined is-success is-centered">
+                            <% @champions.each do |champs|%>
+                            <% if champs.class_list.include? "Fighter"%>
+                            <li class="block-list is-small is-outlined is-success is-centered">
+                            <%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%>
+                            </li>
+                            <% end %>
+                            <%end%>
+                </ul>
+            </div>
+        </article>
+    </div>
+</div>
+</div>
+</section>
+<div class="columns is-mobile is-centered">
+<div class="column is-half is-narrow"></div>
+</div>

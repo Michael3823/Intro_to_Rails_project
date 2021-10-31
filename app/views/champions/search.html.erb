@@ -10,7 +10,12 @@
                         
                     </div>
                     <div class="column is-6 is-offset-1">
+                        <% if @champions.count == 0 %>
+                        <h2>There are no champions that have: <%= params[:keywords] %></h2>
+                       
+                        <% else %>
                         <h2> Found <%= pluralize(@champions.count, 'Champion') %> When searching for: <%= params[:keywords] %></h2>
+                        <% end %>
 
                         <ul class="block-list is-small is-outlined is-success is-centered">
                             <% @champions.each do |champ| %>
