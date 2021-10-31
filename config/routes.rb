@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about_us/index'
   get 'champion_classes/index'
   get 'champion_classes/show'
   root 'home#index'
