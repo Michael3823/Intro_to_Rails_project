@@ -15,7 +15,9 @@
 
                         <ul class="block-list is-small is-outlined is-success is-centered">
                             <% @champions.each do |champs|%>
-                            <li class="block-list is-small is-outlined is-success is-centered"><%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%></li>
+                            <li class="block-list is-small is-outlined is-success is-centered">
+                            <%= link_to champs.name, champs, class: "block-list is-small is-outlined is-success is-centered"%>
+                            </li>
                             <%end%>
                         </ul>
                         <%= will_paginate @champions %>
